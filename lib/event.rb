@@ -21,4 +21,15 @@ class Event
       food_truck.inventory[item] > 0
     end
   end
+
+  def total_inventory
+    total_inventory = Hash.new{ |hash, key| hash[key] = {:quantity => 0, :food_trucks =>[]}}
+    @food_trucks.each do |food_truck|
+      food_truck.inventory.each do |item, quantity|
+        total_inventory[item][:quantity] += quantity
+        total_inventory[item][:food_trucks] << food_truck
+      end
+    end
+    total_inventory
+  end
 end
