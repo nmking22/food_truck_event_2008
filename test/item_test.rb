@@ -16,4 +16,5 @@ class ItemTest < Minitest::Test
 
     assert_equal "Apple Pie (Slice)", item2.name
     assert_equal 2.50, item2.price
+  end
 end
