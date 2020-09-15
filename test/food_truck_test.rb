@@ -14,7 +14,14 @@ class FoodTruckTest < Minitest::Test
     food_truck = FoodTruck.new("Rocky Mountain Pies")
 
     expected = {}
+
     assert_equal "Rocky Mountain Pies", food_truck.name
     assert_equal expected, food_truck.inventory
+  end
+
+  def test_check_stock_returns_zero_as_default
+    food_truck = FoodTruck.new("Rocky Mountain Pies")
+
+    assert_equal 0, food_truck.check_stock(item1)
   end
 end
