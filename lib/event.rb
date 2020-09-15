@@ -39,4 +39,10 @@ class Event
       item_hash[:quantity] > 50 && item_hash[:food_trucks].length > 1
     end[0][0]
   end
+
+  def sorted_item_list
+    items = total_inventory.map do |item, item_hash|
+      item.name
+    end.sort
+  end
 end
